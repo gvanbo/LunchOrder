@@ -199,6 +199,7 @@ namespace LunchOrderProj
             this.BtnReset.TabIndex = 3;
             this.BtnReset.Text = "&Reset";
             this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // BtnExit
             // 
@@ -252,7 +253,6 @@ namespace LunchOrderProj
             this.chkLettuce.TabIndex = 0;
             this.chkLettuce.Text = "Lettuce, Tomato, Onions";
             this.chkLettuce.UseVisualStyleBackColor = true;
-
             // 
             // grpSalad
             // 

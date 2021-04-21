@@ -29,15 +29,9 @@ namespace LunchOrderProj
 			grpHamburger.Visible = true;
 			grpPizza.Visible = false;
 			grpSalad.Visible = false;
+			resetTotals();
+			resetCheck();
 			subtotal = 6.95;
-
-
-			if (chkLettuce.Checked == true)
-				subtotal += 0.75;
-			if (chkKetchup.Checked == true)
-				subtotal += 0.75;
-			if (chkFries.Checked == true)
-				subtotal += 0.75;
 
 			           
         }
@@ -47,35 +41,22 @@ namespace LunchOrderProj
 			grpHamburger.Visible = false;
 			grpPizza.Visible = true;
 			grpSalad.Visible = false;
+			resetTotals();
+			resetCheck();
 			subtotal = 5.95;
 
-
-			if (chkPepperoni.Checked == true)
-				subtotal += 0.75;
-			if (chkSausage.Checked == true)
-				subtotal += 0.75;
-			if (chkOlives.Checked == true)
-				subtotal += 0.75;
-
-			//display(subtotal);
 		}
+
 
         private void RdoSalad_CheckedChanged(object sender, EventArgs e)
         {
 			grpHamburger.Visible = false;
 			grpPizza.Visible = false;
 			grpSalad.Visible = true;
+			resetTotals();
+			resetCheck();
 			subtotal = 4.95;
-
-
-			if (chkCroutons.Checked == true)
-				subtotal += 0.75;
-			if (chkBacon.Checked == true)
-				subtotal += 0.75;
-			if (chkBread.Checked == true)
-				subtotal += 0.75;
-
-			
+	
 		}
 
         private void Form1_Load(object sender, EventArgs e)
@@ -107,6 +88,7 @@ namespace LunchOrderProj
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
+			// calculate addOns
 			addOn(chkBacon);
 			addOn(chkBread);
 			addOn(chkCroutons);
@@ -116,7 +98,45 @@ namespace LunchOrderProj
 			addOn(chkOlives);
 			addOn(chkPepperoni);
 			addOn(chkSausage);
+			//calculate total
 			display(subtotal);
+		}
+
+		private void resetCheck()
+        {
+			//unchecks all addons
+			chkBacon.Checked = false;
+			chkBread.Checked = false;
+			chkCroutons.Checked = false;
+			chkFries.Checked = false;
+			chkKetchup.Checked = false;
+			chkLettuce.Checked = false;
+			chkOlives.Checked = false;
+			chkPepperoni.Checked = false;
+			chkSausage.Checked = false;
+
+        }
+
+		private void resetTotals()
+        {
+			TxtSubtotalOutput.Text = "";
+			txtTaxOutput.Text = "";
+			TxtTotalOutput.Text = "";
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+			//reset totals & selections, autoselect burger
+			resetCheck();
+			resetTotals();
+			subtotal = 0;
+			RdoBurger.Checked = true;
+			grpHamburger.Visible = true;
+			grpPizza.Visible = false;
+			grpSalad.Visible = false;
+			subtotal = 6.95;
+
+
 		}
     }
 }

@@ -10,14 +10,17 @@ using System.Windows.Forms;
 
 namespace LunchOrderProj
 {
-	public partial class Form1 : Form
+	public partial class LunchOrder : Form
 	{
-		public Form1()
+		public LunchOrder()
 		{
 			InitializeComponent();
 		}
 
 		double subtotal = 0;
+		double hamburger = 6.95;
+		double pizza = 5.95;
+		double salad = 4.95;
 		
 		private void BtnExit_Click(object sender, EventArgs e)
 		{
@@ -31,7 +34,7 @@ namespace LunchOrderProj
 			grpSalad.Visible = false;
 			resetTotals();
 			resetCheck();
-			subtotal = 6.95;
+			subtotal = hamburger;
 
 			           
         }
@@ -43,7 +46,7 @@ namespace LunchOrderProj
 			grpSalad.Visible = false;
 			resetTotals();
 			resetCheck();
-			subtotal = 5.95;
+			subtotal = pizza;
 
 		}
 
@@ -55,7 +58,7 @@ namespace LunchOrderProj
 			grpSalad.Visible = true;
 			resetTotals();
 			resetCheck();
-			subtotal = 4.95;
+			subtotal = salad;
 	
 		}
 
@@ -64,7 +67,7 @@ namespace LunchOrderProj
 			grpHamburger.Visible = true;
 			grpPizza.Visible = false;
 			grpSalad.Visible = false;
-			subtotal = 6.95;
+			subtotal = hamburger;
 
 			
 		}
@@ -134,7 +137,7 @@ namespace LunchOrderProj
 			grpHamburger.Visible = true;
 			grpPizza.Visible = false;
 			grpSalad.Visible = false;
-			subtotal = 6.95;
+			subtotal = hamburger;
 
 
 		}

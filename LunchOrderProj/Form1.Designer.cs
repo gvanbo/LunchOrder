@@ -1,7 +1,7 @@
 ﻿
 namespace LunchOrderProj
 {
-	partial class Form1
+	partial class LunchOrder
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -45,12 +45,12 @@ namespace LunchOrderProj
             this.BtnExit = new System.Windows.Forms.Button();
             this.grpHamburger = new System.Windows.Forms.GroupBox();
             this.chkFries = new System.Windows.Forms.CheckBox();
+            this.chkKetchup = new System.Windows.Forms.CheckBox();
+            this.chkLettuce = new System.Windows.Forms.CheckBox();
             this.grpSalad = new System.Windows.Forms.GroupBox();
             this.chkBread = new System.Windows.Forms.CheckBox();
             this.chkBacon = new System.Windows.Forms.CheckBox();
             this.chkCroutons = new System.Windows.Forms.CheckBox();
-            this.chkKetchup = new System.Windows.Forms.CheckBox();
-            this.chkLettuce = new System.Windows.Forms.CheckBox();
             this.grpPizza = new System.Windows.Forms.GroupBox();
             this.chkOlives = new System.Windows.Forms.CheckBox();
             this.chkSausage = new System.Windows.Forms.CheckBox();
@@ -230,7 +230,7 @@ namespace LunchOrderProj
             this.grpHamburger.Size = new System.Drawing.Size(172, 100);
             this.grpHamburger.TabIndex = 5;
             this.grpHamburger.TabStop = false;
-            this.grpHamburger.Text = "AddOns - $0.75 Each";
+            this.grpHamburger.Text = "Hamburger AddOns - $0.75";
             // 
             // chkFries
             // 
@@ -242,17 +242,39 @@ namespace LunchOrderProj
             this.chkFries.Text = "French Fies";
             this.chkFries.UseVisualStyleBackColor = true;
             // 
+            // chkKetchup
+            // 
+            this.chkKetchup.AutoSize = true;
+            this.chkKetchup.Location = new System.Drawing.Point(7, 47);
+            this.chkKetchup.Name = "chkKetchup";
+            this.chkKetchup.Size = new System.Drawing.Size(156, 19);
+            this.chkKetchup.TabIndex = 1;
+            this.chkKetchup.Tag = "Ketchup, Mustard, Mayonaise";
+            this.chkKetchup.Text = "Ketchup, Mustard & Mayo";
+            this.chkKetchup.UseVisualStyleBackColor = true;
+            // 
+            // chkLettuce
+            // 
+            this.chkLettuce.AutoSize = true;
+            this.chkLettuce.Location = new System.Drawing.Point(7, 22);
+            this.chkLettuce.Name = "chkLettuce";
+            this.chkLettuce.Size = new System.Drawing.Size(155, 19);
+            this.chkLettuce.TabIndex = 0;
+            this.chkLettuce.Tag = "Lettuce, Tomato, Onions";
+            this.chkLettuce.Text = "Lettuce, Tomato, Onions";
+            this.chkLettuce.UseVisualStyleBackColor = true;
+            // 
             // grpSalad
             // 
             this.grpSalad.Controls.Add(this.chkBread);
             this.grpSalad.Controls.Add(this.chkBacon);
             this.grpSalad.Controls.Add(this.chkCroutons);
-            this.grpSalad.Location = new System.Drawing.Point(486, 40);
+            this.grpSalad.Location = new System.Drawing.Point(678, 42);
             this.grpSalad.Name = "grpSalad";
             this.grpSalad.Size = new System.Drawing.Size(172, 100);
             this.grpSalad.TabIndex = 7;
             this.grpSalad.TabStop = false;
-            this.grpSalad.Text = "AddOns - $0.75 Each";
+            this.grpSalad.Text = "Salad AddOns - $0.75 Each";
             // 
             // chkBread
             // 
@@ -284,39 +306,17 @@ namespace LunchOrderProj
             this.chkCroutons.Text = "Croutons";
             this.chkCroutons.UseVisualStyleBackColor = true;
             // 
-            // chkKetchup
-            // 
-            this.chkKetchup.AutoSize = true;
-            this.chkKetchup.Location = new System.Drawing.Point(7, 47);
-            this.chkKetchup.Name = "chkKetchup";
-            this.chkKetchup.Size = new System.Drawing.Size(156, 19);
-            this.chkKetchup.TabIndex = 1;
-            this.chkKetchup.Tag = "Ketchup, Mustard, Mayonaise";
-            this.chkKetchup.Text = "Ketchup, Mustard & Mayo";
-            this.chkKetchup.UseVisualStyleBackColor = true;
-            // 
-            // chkLettuce
-            // 
-            this.chkLettuce.AutoSize = true;
-            this.chkLettuce.Location = new System.Drawing.Point(7, 22);
-            this.chkLettuce.Name = "chkLettuce";
-            this.chkLettuce.Size = new System.Drawing.Size(155, 19);
-            this.chkLettuce.TabIndex = 0;
-            this.chkLettuce.Tag = "Lettuce, Tomato, Onions";
-            this.chkLettuce.Text = "Lettuce, Tomato, Onions";
-            this.chkLettuce.UseVisualStyleBackColor = true;
-            // 
             // grpPizza
             // 
             this.grpPizza.Controls.Add(this.chkOlives);
             this.grpPizza.Controls.Add(this.chkSausage);
             this.grpPizza.Controls.Add(this.chkPepperoni);
-            this.grpPizza.Location = new System.Drawing.Point(664, 40);
+            this.grpPizza.Location = new System.Drawing.Point(497, 42);
             this.grpPizza.Name = "grpPizza";
-            this.grpPizza.Size = new System.Drawing.Size(200, 96);
+            this.grpPizza.Size = new System.Drawing.Size(163, 96);
             this.grpPizza.TabIndex = 6;
             this.grpPizza.TabStop = false;
-            this.grpPizza.Text = "AddOns - $0.75 Each";
+            this.grpPizza.Text = "Pizza AddOns - $0.75 Each";
             // 
             // chkOlives
             // 
@@ -352,7 +352,7 @@ namespace LunchOrderProj
             // 
             this.txtOrderDetails.Location = new System.Drawing.Point(546, 228);
             this.txtOrderDetails.Name = "txtOrderDetails";
-            this.txtOrderDetails.Size = new System.Drawing.Size(338, 155);
+            this.txtOrderDetails.Size = new System.Drawing.Size(304, 155);
             this.txtOrderDetails.TabIndex = 8;
             this.txtOrderDetails.Text = "";
             // 
@@ -367,12 +367,12 @@ namespace LunchOrderProj
             this.lblInstructions.Text = "Select Main Course First, then select Add Ons.  Finally, click on Place Order to " +
     "see totals.";
             // 
-            // Form1
+            // LunchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(973, 450);
+            this.ClientSize = new System.Drawing.Size(894, 450);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.txtOrderDetails);
             this.Controls.Add(this.grpSalad);
@@ -384,7 +384,7 @@ namespace LunchOrderProj
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.main);
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "LunchOrder";
             this.Text = "Lunch Order";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.main.ResumeLayout(false);

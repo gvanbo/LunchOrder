@@ -181,35 +181,38 @@ namespace LunchOrderProj
             // 
             // BtnPlaceOrder
             // 
+            this.BtnPlaceOrder.BackColor = System.Drawing.Color.Honeydew;
             this.BtnPlaceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnPlaceOrder.Location = new System.Drawing.Point(348, 228);
             this.BtnPlaceOrder.Name = "BtnPlaceOrder";
             this.BtnPlaceOrder.Size = new System.Drawing.Size(172, 43);
             this.BtnPlaceOrder.TabIndex = 2;
             this.BtnPlaceOrder.Text = "&Place Order";
-            this.BtnPlaceOrder.UseVisualStyleBackColor = true;
+            this.BtnPlaceOrder.UseVisualStyleBackColor = false;
             this.BtnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
             // 
             // BtnReset
             // 
+            this.BtnReset.BackColor = System.Drawing.Color.Azure;
             this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnReset.Location = new System.Drawing.Point(348, 284);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(172, 43);
             this.BtnReset.TabIndex = 3;
             this.BtnReset.Text = "&Reset";
-            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.UseVisualStyleBackColor = false;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // BtnExit
             // 
+            this.BtnExit.BackColor = System.Drawing.Color.Snow;
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnExit.Location = new System.Drawing.Point(348, 340);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(172, 43);
             this.BtnExit.TabIndex = 4;
             this.BtnExit.Text = "E&xit";
-            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // grpHamburger
@@ -342,6 +345,7 @@ namespace LunchOrderProj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(973, 450);
             this.Controls.Add(this.grpSalad);
             this.Controls.Add(this.grpPizza);

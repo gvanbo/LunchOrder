@@ -29,8 +29,10 @@ namespace LunchOrderProj
 		double hamburgerAdd = 0.75;
 		double pizzaAdd = 0.50;
 		double saladAdd = 0.25;
-		
-		private void BtnExit_Click(object sender, EventArgs e)
+		double total;
+		double tax;
+
+        private void BtnExit_Click(object sender, EventArgs e)
 		{
 			// close Application
 			this.Close();
@@ -86,11 +88,16 @@ namespace LunchOrderProj
 
 		}
 
-		private void display(double subtotal)
+		private void CalculateTotals(double subtotal, ref double total, ref double tax)
         {
 			// calculate totals
-			double tax = subtotal * 0.05;
-			double total = subtotal + tax;
+			 tax = subtotal * 0.05;
+			 total = subtotal + tax;
+
+        }
+
+		private void displayTotals(double subtotal, double tax, double total)
+        {
 			TxtSubtotalOutput.Text = subtotal.ToString("c");
 			txtTaxOutput.Text = tax.ToString("c");
 			TxtTotalOutput.Text = total.ToString("c");
@@ -105,9 +112,9 @@ namespace LunchOrderProj
         }
 
 
-        private void BtnPlaceOrder_Click(object sender, EventArgs e)
-        {
-			// calculate addOns
+		private void BtnPlaceOrder_Click(object sender, EventArgs e)
+		{
+			// add addons to subtotal
 			addOn(chkBacon, saladAdd);
 			addOn(chkBread, saladAdd);
 			addOn(chkCroutons, saladAdd);
@@ -118,7 +125,9 @@ namespace LunchOrderProj
 			addOn(chkPepperoni, pizzaAdd);
 			addOn(chkSausage, pizzaAdd);
 			//calculate total
-			display(subtotal);
+			CalculateTotals(subtotal, ref total, ref tax);
+			//display the total amounts of the order
+			displayTotals(subtotal, tax, total);
 		}
 
 

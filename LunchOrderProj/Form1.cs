@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Simple Windows Desktopp Application takes user selection and outputs totals
+// Date Created is April 21, 2021
+//Author Grant van Boeschoten
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,19 +20,25 @@ namespace LunchOrderProj
 		{
 			InitializeComponent();
 		}
-
+		// initialize subtotal varibale with 0
 		double subtotal = 0;
+		// each variable assings totals to menu itemes
 		double hamburger = 6.95;
 		double pizza = 5.95;
 		double salad = 4.95;
+		double hamburgerAdd = 0.75;
+		double pizzaAdd = 0.50;
+		double saladAdd = 0.25;
 		
 		private void BtnExit_Click(object sender, EventArgs e)
 		{
+			// close Application
 			this.Close();
 		}
 
         private void RdoBurger_CheckedChanged(object sender, EventArgs e)
         {
+			// Select Burger and linked Addons
 			grpHamburger.Visible = true;
 			grpPizza.Visible = false;
 			grpSalad.Visible = false;
@@ -41,6 +51,7 @@ namespace LunchOrderProj
 
         private void RdoPizza_CheckedChanged(object sender, EventArgs e)
         {
+			// Select Pizza and linked Addons
 			grpHamburger.Visible = false;
 			grpPizza.Visible = true;
 			grpSalad.Visible = false;
@@ -53,6 +64,7 @@ namespace LunchOrderProj
 
         private void RdoSalad_CheckedChanged(object sender, EventArgs e)
         {
+			// Select Salad and linked Addons
 			grpHamburger.Visible = false;
 			grpPizza.Visible = false;
 			grpSalad.Visible = true;
@@ -64,16 +76,19 @@ namespace LunchOrderProj
 
         private void Form1_Load(object sender, EventArgs e)
         {
+			// set initial settings to Hamburger
 			grpHamburger.Visible = true;
 			grpPizza.Visible = false;
 			grpSalad.Visible = false;
 			subtotal = hamburger;
-
 			
+
+
 		}
 
 		private void display(double subtotal)
         {
+			// calculate totals
 			double tax = subtotal * 0.05;
 			double total = subtotal + tax;
 			TxtSubtotalOutput.Text = subtotal.ToString("c");
@@ -82,28 +97,31 @@ namespace LunchOrderProj
 
         }
 
-		private void addOn(CheckBox item)
+		private void addOn(CheckBox item, double amount)
         {
+			// checks addOns, if selected adds amount to subtotal
 			if (item.Checked == true)
-                subtotal += 0.75;
+                subtotal += amount;
         }
 
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
 			// calculate addOns
-			addOn(chkBacon);
-			addOn(chkBread);
-			addOn(chkCroutons);
-			addOn(chkFries);
-			addOn(chkKetchup);
-			addOn(chkLettuce);
-			addOn(chkOlives);
-			addOn(chkPepperoni);
-			addOn(chkSausage);
+			addOn(chkBacon, saladAdd);
+			addOn(chkBread, saladAdd);
+			addOn(chkCroutons, saladAdd);
+			addOn(chkFries, hamburgerAdd);
+			addOn(chkKetchup, hamburgerAdd);
+			addOn(chkLettuce, hamburgerAdd);
+			addOn(chkOlives, pizzaAdd);
+			addOn(chkPepperoni, pizzaAdd);
+			addOn(chkSausage, pizzaAdd);
 			//calculate total
 			display(subtotal);
 		}
+
+
 
 		private void resetCheck()
         {
@@ -122,6 +140,7 @@ namespace LunchOrderProj
 
 		private void resetTotals()
         {
+			// resets all currency values
 			TxtSubtotalOutput.Text = "";
 			txtTaxOutput.Text = "";
 			TxtTotalOutput.Text = "";

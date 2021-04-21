@@ -55,7 +55,6 @@ namespace LunchOrderProj
             this.chkOlives = new System.Windows.Forms.CheckBox();
             this.chkSausage = new System.Windows.Forms.CheckBox();
             this.chkPepperoni = new System.Windows.Forms.CheckBox();
-            this.txtOrderDetails = new System.Windows.Forms.RichTextBox();
             this.lblInstructions = new System.Windows.Forms.Label();
             this.main.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -239,6 +238,7 @@ namespace LunchOrderProj
             this.chkFries.Name = "chkFries";
             this.chkFries.Size = new System.Drawing.Size(85, 19);
             this.chkFries.TabIndex = 2;
+            this.chkFries.Tag = "French Fries";
             this.chkFries.Text = "French Fies";
             this.chkFries.UseVisualStyleBackColor = true;
             // 
@@ -274,7 +274,7 @@ namespace LunchOrderProj
             this.grpSalad.Size = new System.Drawing.Size(172, 100);
             this.grpSalad.TabIndex = 7;
             this.grpSalad.TabStop = false;
-            this.grpSalad.Text = "Salad AddOns - $0.75 Each";
+            this.grpSalad.Text = "Salad AddOns - $0.25 Each";
             // 
             // chkBread
             // 
@@ -283,6 +283,7 @@ namespace LunchOrderProj
             this.chkBread.Name = "chkBread";
             this.chkBread.Size = new System.Drawing.Size(89, 19);
             this.chkBread.TabIndex = 2;
+            this.chkBread.Tag = "Bread Sticks";
             this.chkBread.Text = "Bread Sticks";
             this.chkBread.UseVisualStyleBackColor = true;
             // 
@@ -293,6 +294,7 @@ namespace LunchOrderProj
             this.chkBacon.Name = "chkBacon";
             this.chkBacon.Size = new System.Drawing.Size(81, 19);
             this.chkBacon.TabIndex = 1;
+            this.chkBacon.Tag = "Bacon Bits";
             this.chkBacon.Text = "Bacon Bits";
             this.chkBacon.UseVisualStyleBackColor = true;
             // 
@@ -303,6 +305,7 @@ namespace LunchOrderProj
             this.chkCroutons.Name = "chkCroutons";
             this.chkCroutons.Size = new System.Drawing.Size(75, 19);
             this.chkCroutons.TabIndex = 0;
+            this.chkCroutons.Tag = "Croutons";
             this.chkCroutons.Text = "Croutons";
             this.chkCroutons.UseVisualStyleBackColor = true;
             // 
@@ -316,7 +319,7 @@ namespace LunchOrderProj
             this.grpPizza.Size = new System.Drawing.Size(163, 96);
             this.grpPizza.TabIndex = 6;
             this.grpPizza.TabStop = false;
-            this.grpPizza.Text = "Pizza AddOns - $0.75 Each";
+            this.grpPizza.Text = "Pizza AddOns - $0.50 Each";
             // 
             // chkOlives
             // 
@@ -325,6 +328,7 @@ namespace LunchOrderProj
             this.chkOlives.Name = "chkOlives";
             this.chkOlives.Size = new System.Drawing.Size(58, 19);
             this.chkOlives.TabIndex = 2;
+            this.chkOlives.Tag = "Olive";
             this.chkOlives.Text = "Olives";
             this.chkOlives.UseVisualStyleBackColor = true;
             // 
@@ -335,6 +339,7 @@ namespace LunchOrderProj
             this.chkSausage.Name = "chkSausage";
             this.chkSausage.Size = new System.Drawing.Size(69, 19);
             this.chkSausage.TabIndex = 1;
+            this.chkSausage.Tag = "Sausage";
             this.chkSausage.Text = "Sausage";
             this.chkSausage.UseVisualStyleBackColor = true;
             // 
@@ -345,16 +350,9 @@ namespace LunchOrderProj
             this.chkPepperoni.Name = "chkPepperoni";
             this.chkPepperoni.Size = new System.Drawing.Size(80, 19);
             this.chkPepperoni.TabIndex = 0;
+            this.chkPepperoni.Tag = "Pepperoni";
             this.chkPepperoni.Text = "Pepperoni";
             this.chkPepperoni.UseVisualStyleBackColor = true;
-            // 
-            // txtOrderDetails
-            // 
-            this.txtOrderDetails.Location = new System.Drawing.Point(546, 228);
-            this.txtOrderDetails.Name = "txtOrderDetails";
-            this.txtOrderDetails.Size = new System.Drawing.Size(304, 155);
-            this.txtOrderDetails.TabIndex = 8;
-            this.txtOrderDetails.Text = "";
             // 
             // lblInstructions
             // 
@@ -374,7 +372,6 @@ namespace LunchOrderProj
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(894, 450);
             this.Controls.Add(this.lblInstructions);
-            this.Controls.Add(this.txtOrderDetails);
             this.Controls.Add(this.grpSalad);
             this.Controls.Add(this.grpPizza);
             this.Controls.Add(this.grpHamburger);
@@ -430,7 +427,6 @@ namespace LunchOrderProj
         private System.Windows.Forms.CheckBox chkBread;
         private System.Windows.Forms.CheckBox chkBacon;
         private System.Windows.Forms.CheckBox chkCroutons;
-        private System.Windows.Forms.RichTextBox txtOrderDetails;
         private System.Windows.Forms.Label lblInstructions;
     }
 }

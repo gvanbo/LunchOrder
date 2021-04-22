@@ -269,7 +269,7 @@ namespace LunchOrderProj
             this.grpSalad.Controls.Add(this.chkBread);
             this.grpSalad.Controls.Add(this.chkBacon);
             this.grpSalad.Controls.Add(this.chkCroutons);
-            this.grpSalad.Location = new System.Drawing.Point(678, 42);
+            this.grpSalad.Location = new System.Drawing.Point(308, 42);
             this.grpSalad.Name = "grpSalad";
             this.grpSalad.Size = new System.Drawing.Size(172, 100);
             this.grpSalad.TabIndex = 7;
@@ -314,7 +314,7 @@ namespace LunchOrderProj
             this.grpPizza.Controls.Add(this.chkOlives);
             this.grpPizza.Controls.Add(this.chkSausage);
             this.grpPizza.Controls.Add(this.chkPepperoni);
-            this.grpPizza.Location = new System.Drawing.Point(497, 42);
+            this.grpPizza.Location = new System.Drawing.Point(308, 42);
             this.grpPizza.Name = "grpPizza";
             this.grpPizza.Size = new System.Drawing.Size(163, 96);
             this.grpPizza.TabIndex = 6;
@@ -370,7 +370,7 @@ namespace LunchOrderProj
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(894, 450);
+            this.ClientSize = new System.Drawing.Size(530, 450);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.grpSalad);
             this.Controls.Add(this.grpPizza);
